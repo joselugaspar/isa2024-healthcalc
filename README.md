@@ -5,7 +5,6 @@ Se nos solicita realizar un fork de este repositorio para la asignatura "Ingenie
 
 ## Tests para Ideal Weight
 Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra calculadora con respecto al método Ideal Weight han sido los siguientes:
-
 - **Test Ideal Weight For Male**:
   ```java
   @Test
@@ -55,7 +54,7 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
         assertThrows(IllegalArgumentException.class, () -> healthCalc.idealWeight(height, 'm'));
     }
   
- - **Test Ideal Weight For Very Low Heightt**:
+ - **Test Ideal Weight For Very Low Height**:
   ```java
   @Test
     public void testIdealWeightForVeryLowHeight() throws Exception {
@@ -64,3 +63,58 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
         assertTrue(result >= 0);
     }
 
+## Tests para Basal Metabolic Rate
+Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra calculadora con respecto al método Basal Metabolic Rate han sido los siguientes:
+
+- **Test Average BMR (Male)**:
+  ```java
+  @Test
+    @DisplayName("Prueba del cálculo de la tasa metabólica basal para hombre")
+    public void testBasalMetabolicRateForMale() {
+        try {
+            float bmr = healthCalc.basalMetabolicRate(80, 175, 'm', 30);
+            assertEquals(1748.75f, bmr, 0.1f);
+        } catch (Exception e) {
+            // Manejo de excepciones
+        }
+    }
+
+- **Test Average BMR (Female)**:
+  ```java
+   @Test
+      @DisplayName("Prueba del cálculo de la tasa metabólica basal para mujer")
+      public void testBasalMetabolicRateForFemale() {
+          try {
+              float bmr = healthCalc.basalMetabolicRate(60, 160, 'w', 25);
+              assertEquals(1314.0f, bmr, 0.1f);
+          } catch (Exception e) {
+              // Manejo de excepciones
+          }
+      }
+
+- **Test BMR for Invalid Gender**:
+  ```java
+  @Test
+      public void testBasalMetabolicRateForInvalidGender() {
+          assertThrows(IllegalArgumentException.class, () -> {
+              healthCalc.basalMetabolicRate(70, 175, 'x', 30);
+          });
+      }
+- **Test BMR for Invalid Age**:
+ ```java
+@Test
+    public void testBasalMetabolicRateForInvalidAge() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            healthCalc.basalMetabolicRate(70, 175, 'm', -10);
+        });
+    }
+
+- **Test BMR for Invalid Height**:
+ ```java
+@Test
+    public void testBasalMetabolicRateForInvalidHeight() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            healthCalc.basalMetabolicRate(70, -175, 'm', 30);
+        });
+    }
+}
