@@ -119,10 +119,10 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
     }
   }
 
-##Resultado de la ejecución de los Tests con JUnit:
+## Resultado de la ejecución de los Tests con JUnit:
 
 <img width="312" alt="Screenshot 2024-03-11 at 13 52 15" src="https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/5928aa8e-32e2-47cf-b743-f4ddeb2ce141">
 
-##Captura de las ramas al hacer gitk:
+## Captura de las ramas al hacer gitk:
 
 ![gitk isa2024](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/fc8545f8-8ba3-4517-ab73-ce2f3d83d3da)
