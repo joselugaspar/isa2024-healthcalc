@@ -141,6 +141,33 @@ En nuestro diagrama se nos solicita por un lado, añadir el caso de uso de calcu
 ![CasosDeUsoHEALTHCALC](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/48452787-5312-47a8-ba59-9251b97b4f1e)
 
 ## Especificación de un caso de uso
-Vamos a especificar el caso de uso de cálculo de IMC:
-[CasosDeUsoHEALTHCALC.txt](https://github.com/joselugaspar/isa2024-healthcalc/files/14633531/CasosDeUsoHEALTHCALC.txt)
+Vamos a especificar el caso de uso de cálculo de IMC, cabe recalcar que este contenido se halla en el txt del directorio doc [CasosDeUsoHEALTHCALC.txt](https://github.com/joselugaspar/isa2024-healthcalc/files/14633588/CasosDeUsoHEALTHCALC.txt):
+Nombre: Calcular IMC (Índice de Masa Corporal)
+Actor principal: Usuario
+Ámbito: Calculadora de salud
+Nivel: Bajo
+Stakeholders e intereses:
+
+Usuario: Interesado en conocer su índice de masa corporal para evaluar su estado de salud.
+Desarrolladores del sistema: Interesados en implementar y mantener la funcionalidad de cálculo del IMC.
+Precondiciones:
+El usuario debe proporcionar su peso en kilogramos (kg) y su altura en metros (m).
+Garantías mínimas:
+El sistema debe calcular el IMC correctamente según la fórmula estándar: IMC = peso (kg) / (altura (m))^2.
+Garantía de éxito:
+El sistema debe proporcionar al usuario el resultado del cálculo del IMC de manera precisa y comprensible.
+Escenario principal:
+El usuario accede a la calculadora de salud y elige la opción de "Calcular IMC".
+El sistema solicita al usuario que ingrese su peso en kilogramos y su altura en metros.
+El usuario ingresa su peso y altura.
+El sistema calcula el IMC utilizando la fórmula estándar.
+El sistema muestra al usuario el resultado del cálculo del IMC.
+Fin del caso de uso.
+Escenarios alternativos:
+En el paso 3, si el usuario ingresa un valor no válido para el peso o la altura (por ejemplo, un valor negativo o no numérico), el sistema muestra un mensaje de error y vuelve al paso 2.
+En el paso 5, si el cálculo del IMC resulta en un valor que está fuera del rango normal (por ejemplo, IMC menor que 10 o mayor que 50), el sistema muestra una advertencia al usuario indicando que el resultado puede ser incorrecto debido a valores extremos y sugiere verificar los datos ingresados.
+Extensiones:
+El sistema podría permitir al usuario guardar el resultado del cálculo del IMC para su referencia futura.
+El sistema podría proporcionar información adicional sobre lo que significa un cierto valor de IMC en términos de categorías de peso (bajo peso, peso normal, sobrepeso, obesidad, etc.).
+
 
