@@ -3,6 +3,7 @@ Se desea desarrollar una calculadora que permita estimar varios parámetros de s
 ## Introducción
 Se nos solicita realizar un fork de este repositorio para la asignatura "Ingeniería del Software Avanzada", de este modo lo clonaremos en nuestra máquina y comenzaremos a trabajar con él.
 
+# Práctica 1
 ## Tests para Ideal Weight
 Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra calculadora con respecto al método Ideal Weight han sido los siguientes:
 - **Test Ideal Weight For Male**:
@@ -126,3 +127,5 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
 ## Captura de las ramas al hacer gitk:
 
 ![gitk isa2024](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/fc8545f8-8ba3-4517-ab73-ce2f3d83d3da)
+
+# Práctica 2
