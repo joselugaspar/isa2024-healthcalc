@@ -131,7 +131,8 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
 
 # Práctica 2
 ## Introducción
-En esta práctica hemos de realizar un Diagrama de Casos de Uso UML, en nuestro caso haremos uso de Visual Paradigm para ello
+En esta práctica hemos de realizar un Diagrama de Casos de Uso UML, en nuestro caso haremos uso de Visual Paradigm para ello.
+
 ![6d10753eda994cb828d6d182304d2c9929ae85c1 (1)](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/d32147c6-0300-4121-8701-61941517ab3d)
 
 ## Adición de dos casos de uso nuevos
