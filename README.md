@@ -1,9 +1,10 @@
 # isa2024-healtcalc
 Se desea desarrollar una calculadora que permita estimar varios parámetros de salud de una persona, como su peso ideal o su tasa metabólica basal (TMB).
+
+# Práctica 1
 ## Introducción
 Se nos solicita realizar un fork de este repositorio para la asignatura "Ingeniería del Software Avanzada", de este modo lo clonaremos en nuestra máquina y comenzaremos a trabajar con él.
 
-# Práctica 1
 ## Tests para Ideal Weight
 Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra calculadora con respecto al método Ideal Weight han sido los siguientes:
 - **Test Ideal Weight For Male**:
@@ -129,3 +130,14 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
 ![gitk isa2024](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/fc8545f8-8ba3-4517-ab73-ce2f3d83d3da)
 
 # Práctica 2
+## Introducción
+En esta práctica hemos de realizar un Diagrama de Casos de Uso UML, en nuestro caso haremos uso de Visual Paradigm para ello
+![6d10753eda994cb828d6d182304d2c9929ae85c1](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/93828896-7ca1-4ac5-8e64-e4e85d81550c)
+
+## Adición de dos casos de uso nuevos
+En nuestro diagrama se nos solicita por un lado, añadir el caso de uso de calculo del índice de masa corporal del usuario (IMC), y otro caso de uso de nuestra elección, optaremos por una nueva funcionalidad de nuestra calculadora de salud, se mostrará el porcentaje de grasa corporal del usuario en cuestión.
+![CasosDeUsoHEALTHCALC](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/48452787-5312-47a8-ba59-9251b97b4f1e)
+
+## Especificación de un caso de uso
+Vamos a especificar el caso de uso de cálculo de IMC:
+[CasosDeUsoHEALTHCALC.txt](https://github.com/joselugaspar/isa2024-healthcalc/files/14633531/CasosDeUsoHEALTHCALC.txt)
