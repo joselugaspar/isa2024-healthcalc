@@ -132,12 +132,15 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
 # Práctica 2
 ## Introducción
 En esta práctica hemos de realizar un Diagrama de Casos de Uso UML, en nuestro caso haremos uso de Visual Paradigm para ello
-![6d10753eda994cb828d6d182304d2c9929ae85c1](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/93828896-7ca1-4ac5-8e64-e4e85d81550c)
+![6d10753eda994cb828d6d182304d2c9929ae85c1 (1)](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/d32147c6-0300-4121-8701-61941517ab3d)
 
 ## Adición de dos casos de uso nuevos
 En nuestro diagrama se nos solicita por un lado, añadir el caso de uso de calculo del índice de masa corporal del usuario (IMC), y otro caso de uso de nuestra elección, optaremos por una nueva funcionalidad de nuestra calculadora de salud, se mostrará el porcentaje de grasa corporal del usuario en cuestión.
+
+
 ![CasosDeUsoHEALTHCALC](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/48452787-5312-47a8-ba59-9251b97b4f1e)
 
 ## Especificación de un caso de uso
 Vamos a especificar el caso de uso de cálculo de IMC:
 [CasosDeUsoHEALTHCALC.txt](https://github.com/joselugaspar/isa2024-healthcalc/files/14633531/CasosDeUsoHEALTHCALC.txt)
+
