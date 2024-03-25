@@ -1,5 +1,7 @@
 # isa2024-healtcalc
 Se desea desarrollar una calculadora que permita estimar varios parámetros de salud de una persona, como su peso ideal o su tasa metabólica basal (TMB).
+
+# Práctica 1
 ## Introducción
 Se nos solicita realizar un fork de este repositorio para la asignatura "Ingeniería del Software Avanzada", de este modo lo clonaremos en nuestra máquina y comenzaremos a trabajar con él.
 
@@ -126,3 +128,128 @@ Los tests llevados a cabo para comprobar el correcto funcionamiento de nuestra c
 ## Captura de las ramas al hacer gitk:
 
 ![gitk isa2024](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/fc8545f8-8ba3-4517-ab73-ce2f3d83d3da)
+
+# Práctica 2
+## Introducción
+En esta práctica hemos de realizar un Diagrama de Casos de Uso UML, en nuestro caso haremos uso de Visual Paradigm para ello.
+
+![6d10753eda994cb828d6d182304d2c9929ae85c1 (1)](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/d32147c6-0300-4121-8701-61941517ab3d)
+
+## Adición de dos casos de uso nuevos
+En nuestro diagrama se nos solicita por un lado, añadir el caso de uso de calculo del índice de masa corporal del usuario (IMC), y otro caso de uso de nuestra elección, optaremos por una nueva funcionalidad de nuestra calculadora de salud, se mostrará el porcentaje de grasa corporal del usuario en cuestión.
+
+
+![CasosDeUsoHEALTHCALC](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/48452787-5312-47a8-ba59-9251b97b4f1e)
+
+## Especificación de un caso de uso
+Vamos a especificar el caso de uso de cálculo de IMC, cabe recalcar que este contenido se halla en el txt del directorio doc [CasosDeUsoHEALTHCALC.txt](https://github.com/joselugaspar/isa2024-healthcalc/files/14633588/CasosDeUsoHEALTHCALC.txt):
+
+**Nombre:** Calcular IMC (Índice de Masa Corporal)
+
+**Actor principal:** Usuario
+
+**Ámbito:** Calculadora de salud
+
+**Nivel:** Bajo
+
+**Stakeholders e intereses:**
+
+  ·Usuario: Interesado en conocer su índice de masa corporal para evaluar su estado de salud.
+  
+  ·Desarrolladores del sistema: Interesados en implementar y mantener la funcionalidad de cálculo del IMC.
+  
+  ·Precondiciones: El usuario debe proporcionar su peso en kilogramos (kg) y su altura en metros (m).
+  
+  ·Garantías mínimas: El sistema debe calcular el IMC correctamente según la fórmula estándar: IMC = peso (kg) / (altura (m))^2.
+  
+  ·Garantía de éxito: El sistema debe proporcionar al usuario el resultado del cálculo del IMC de manera precisa y comprensible.
+  
+**Escenario principal:**
+
+  1.El usuario accede a la calculadora de salud y elige la opción de "Calcular IMC".
+  
+  2.El sistema solicita al usuario que ingrese su peso en kilogramos y su altura en metros.
+  
+  3.El usuario ingresa su peso y altura.
+  
+  4.El sistema calcula el IMC utilizando la fórmula estándar.
+  
+  5.El sistema muestra al usuario el resultado del cálculo del IMC.
+  
+  6.Fin del caso de uso.
+  
+**Escenarios alternativos:**
+
+  ·En el paso 3, si el usuario ingresa un valor no válido para el peso o la altura (por ejemplo, un valor negativo o no numérico), el sistema muestra un mensaje de error y vuelve al paso 2.
+  
+  ·En el paso 5, si el cálculo del IMC resulta en un valor que está fuera del rango normal (por ejemplo, IMC menor que 10 o mayor que 50), el sistema muestra una advertencia al usuario indicando que el resultado puede ser incorrecto debido a valores extremos y sugiere verificar los datos ingresados.
+  
+**Extensiones:**
+
+  ·El sistema podría permitir al usuario guardar el resultado del cálculo del IMC para su referencia futura.
+
+  ·El sistema podría proporcionar información adicional sobre lo que significa un cierto valor de IMC en términos de categorías de peso (bajo peso, peso normal, sobrepeso, obesidad, etc.).
+
+# Práctica 3
+## Introducción
+En esta práctica se nos introduce el empleo de cucumber para realización de features en nuestro proyecto, se nos encomienda realizar dos user stories relacionadas con este repositorio.
+
+
+![cucumber](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/4d4849e3-9945-4ae6-bb36-fbb96cd936d6)
+
+## Adición de dos user stories
+Una vez más, este contenido podemos encontrarlo en un txt dentro de la carpeta doc.
+
+**Calculate_ideal_weight.feature:**
+
+-As a user
+
+-I want to calculate the ideal weight for a person
+
+-So that I can have a target weight to achieve for better health
+
+Acceptance criteria:
+
+·Scenario 1:
+
+	Given the user has accessed the health calculator
+	When the user selects the option to calculate ideal weight
+	Then the system prompts the user to enter their height in meters and their gender
+ 
+·Scenario 2:
+
+	Given the user has entered their height and gender
+	When the user submits the information
+	Then the system calculates the ideal weight based on the entered data
+ 
+·Scenario 3:
+
+	Given the system has calculated the ideal weight
+	When the result is displayed
+	Then the user can see the ideal weight value for their specified height and gender
+ 
+**Calculate_BMR.feature:**
+
+-As a user
+
+-I want to calculate the basal metabolic rate (BMR) of a person
+
+-So that I can understand how many calories my body needs at rest
+
+Acceptance criteria:
+
+·Scenario 1:
+
+	Given the user has accessed the health calculator
+	When the user selects the option to calculate BMR
+	Then the system prompts the user to enter their gender, age, weight in kilograms, and height in centimeters
+·Scenario 2:
+
+	Given the user has entered their gender, age, weight, and height
+	When the user submits the information
+	Then the system calculates the BMR using the appropriate formula based on the entered data
+·Scenario 3:
+
+	Given the system has calculated the BMR
+	When the result is displayed
+	Then the user can see the calculated BMR value, indicating the number of calories their body needs at rest
