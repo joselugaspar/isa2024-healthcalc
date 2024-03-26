@@ -202,54 +202,56 @@ Una vez más, este contenido podemos encontrarlo en un txt dentro de la carpeta 
 
 **Calculate_ideal_weight.feature:**
 
--As a user
+"As a user,
 
--I want to calculate the ideal weight for a person
+I want to calculate the ideal weight for a person,
 
--So that I can have a target weight to achieve for better health
+So that I can have a target weight to achieve for better health."
 
 Acceptance criteria:
 
-·Scenario 1:
+·Scenario 1: Calculate ideal weight for a person with valid inputs
 
 	Given the user has accessed the health calculator
-	When the user selects the option to calculate ideal weight
-	Then the system prompts the user to enter their height in meters and their gender
+   	When the user puts his gender and height 
+    	Then the system calculates the ideal weight based on the entered data
  
-·Scenario 2:
+·Scenario 2: Displayed wrong inputs
 
-	Given the user has entered their height and gender
-	When the user submits the information
-	Then the system calculates the ideal weight based on the entered data
+	Given the user has accessed the health calculator
+    	When the inputs are negative
+    	Then the system throws an error
  
-·Scenario 3:
+·Scenario 3: Display calculated ideal weight
 
-	Given the system has calculated the ideal weight
-	When the result is displayed
-	Then the user can see the ideal weight value for their specified height and gender
+	Given the user has accessed the health calculator
+    	When the user puts his gender and height 
+    	Then the ideal weight is zero and the system should rise an error
  
 **Calculate_BMR.feature:**
 
--As a user
+"As a user,
 
--I want to calculate the basal metabolic rate (BMR) of a person
-
--So that I can understand how many calories my body needs at rest
+I want to calculate the basal metabolic rate (BMR) of a person,
+  
+So that I can understand how many calories my body needs at rest."
 
 Acceptance criteria:
 
-·Scenario 1:
+·Scenario 1: Calculate BMR for a person
 
 	Given the user has accessed the health calculator
-	When the user selects the option to calculate BMR
-	Then the system prompts the user to enter their gender, age, weight in kilograms, and height in centimeters
-·Scenario 2:
+    	When the user submits gender, age, weight and height
+    	Then the system calculates the BMR using the appropriate formula based on the entered data
+     
+·Scenario 2: Enter gender, age, weight, and height
 
 	Given the user has entered their gender, age, weight, and height
-	When the user submits the information
-	Then the system calculates the BMR using the appropriate formula based on the entered data
-·Scenario 3:
+    	When the user submits negative information
+    	Then the system throws an error
+     
+·Scenario 3: Display calculated BMR
 
 	Given the system has calculated the BMR
-	When the result is displayed
-	Then the user can see the calculated BMR value, indicating the number of calories their body needs at rest
+    	When the result is displayed
+    	Then if the result is zero the system should raise an error
