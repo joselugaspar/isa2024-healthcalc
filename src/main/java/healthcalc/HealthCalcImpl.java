@@ -1,6 +1,16 @@
 package healthcalc;
 
 public class HealthCalcImpl implements HealthCalc {
+    
+    //Implementación de singleton
+    private static HealthCalcImpl instance;
+    private HealthCalcImpl() {}
+    public static synchronized HealthCalcImpl getInstance() {
+        if (instance == null) {
+            instance = new HealthCalcImpl();
+        }
+        return instance;
+    }
 
     @Override
     public float idealWeight(int height, char gender) throws Exception {
