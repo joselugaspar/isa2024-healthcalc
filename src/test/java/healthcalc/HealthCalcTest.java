@@ -10,15 +10,15 @@ import org.junit.jupiter.api.Test;
 @DisplayName("Tests para la calculadora de salud.")
 public class HealthCalcTest {
 
-    private HealthCalc healthCalc = new HealthCalcImpl();
+    private HealthCalc healthCalc = HealthCalcImpl.getInstance(); //Implementación de singleton
 
     @Test
 	public void testIdealWeightForMale() {
 		try {
 			float idealWeight = healthCalc.idealWeight(180, 'm');
-			assertEquals(72.5f, idealWeight, 0.1f); // Actualizando el valor esperado
+			assertEquals(72.5f, idealWeight, 0.1f); 
 		} catch (Exception e) {
-			// Manejo de excepciones
+			
 		}
 	}
 
@@ -29,7 +29,7 @@ public class HealthCalcTest {
             float idealWeight = healthCalc.idealWeight(160, 'w');
             assertEquals(56.0f, idealWeight, 0.1f);
         } catch (Exception e) {
-            // Manejo de excepciones
+            
         }
     }
 
