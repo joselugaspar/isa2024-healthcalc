@@ -2,9 +2,8 @@ package healthcalc.GUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import healthcalc.*;
 
-
-import healthcalc.HealthCalcImpl;
 
 public class Controlador implements ActionListener {
 	
@@ -20,11 +19,10 @@ public class Controlador implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String comando = e.getActionCommand();
 		if (comando.equals("Calcular Peso Ideal")) {
-			// idealWeight
-			int altura = vista.getAltura();
-			char genero= vista.getGenero();
+			int height = vista.getAltura();
+			Gender gender= vista.getGenero();
 			try {
-				float resultado = modelo.idealWeight(altura, genero);	
+				double resultado = modelo.getIdealBodyWeight(new PersonClass(height, gender));	
 				vista.setResultPI(resultado);
 			} catch (Exception error) {
 				String msg= comando+": "+error.getMessage();
@@ -32,12 +30,12 @@ public class Controlador implements ActionListener {
 			}
 			
 		}else if(comando.equals("Calcular BMR")) {
-			int altura = vista.getAltura();
-			char genero= vista.getGenero();
-			int edad= vista.getEdad();
-			float peso= vista.getPeso();
+			float height = vista.getAltura();
+			Gender gender= vista.getGenero();
+			int age= vista.getEdad();
+			float weight= vista.getPeso();
 			try {
-				float resultado = modelo.basalMetabolicRate(peso, altura, genero, edad);	
+				double resultado = modelo.basalMetabolicRate(new PersonClass(weight, height, age, gender));	
 				vista.setResultBMR(resultado);
 			} catch (Exception error) {
 				String msg= comando+": "+error.getMessage();
