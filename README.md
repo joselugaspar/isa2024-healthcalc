@@ -1,23 +1,35 @@
-# Práctica 6
+# Práctica 7
 ## Introducción
-Se nos pide realizar un patrón de diseño diferente que cubra las necesidades de cada uno de los apartados estipulados
+Se nos pide realizar un refactoring para sopesar los problemas que se nos presentan con una nueva versión de nuestra calculadora
+![image](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/57e80489-870b-440c-9008-ea2857afdf23)
 
-## Primer apartado
-En este apartado se nos dice explícitamente de usar el patrón singleton.
+1. **Bad Smell: Large Class**
+    - **Refactoring:** Extract Interface
+    - **Tipo:** Class Refactoring
+    - **Desc:** Se han implementado dos interfaces nuevas, MetabolicMetrics y CardiovascularMetrics, para satisfacer estas dos interfaces se ha tenido que cambiar todas las referencias a los métodos que implementan peso ideal y también para que devuelvan double y no float.
+    - **Número de cambios:** 
+        - 2 crear ambas interfaces
+        - 1 implementarlas en HealthCalcImpl
+        - 2 veces se ha cambiado float a double en HealthCalcImpl
 
-![singleton](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/7f9cec13-9ab9-452f-a59e-8820013fdb19)
+2. **Bad Smell: Primitive Obsession**
+    - **Refactoring:** Introduce Parameter Object
+    - **Tipo:** Class Refactoring
+    - **Desc:** Se ha creado un objeto tipo enum para el género, quitando así el término char, que es nuestro problema primitivo.
+    - **Número de cambios:** 
+        - 1 crear Gender
+        - 5 cambiar char por Gender
+        - 3 reemplazar en los condicionales 'w' por Gender.FEMALE
+        - 3 reemplazar en los condicionales 'm' por Gender.MALE
+        - 1 crear un método en adapter que seleccione un valor enum dependiendo del caracter que se le proporciona
+        - 1 quitar un test que usaba un género no válido
 
-## Apartado A
-Aquí se nos habla sobre una interfaz creada por un Hospital, para que la funcionalidad de nuestra calculadora pueda emplearse con esta interfaz usamos el patrón adapter.
+3. **Bad Smell: Long Parameter List**
+    - **Tipo:** Class Refactoring
+    - **Desc:** Se ha creado una nueva interfaz y una clase que implementa esta, Person y PersonClass, así se usará esta clase para crear objetos que implementan los datos de la interfaz y realizan ambos tipos de cálculo, así no hay que pasarle a la calculadora todos los parámetros de siempre, si no una persona.
+    - **Número de cambios:** 
+        - 2 crear la interfaz y la clase
+        - 2 cambios en el adapter dos métodos para que procesen un objeto Person
+        - 2 cambios en el controlador para lo mismo que use un objeto Person
+        - 10 cambios en test
 
-![adapter](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/1dd025a6-2eda-4771-a216-5b71a44caaa0)
-
-## Apartado B
-Ahora se quieren recoger las estadísticas medias, entre otros datos, de los pacientes que usan la calculadora, para ello implementamos una interfaz llamada HealthStats que llama a todos los métodos que devuelven estos valores; logramos su funcionamiento con el patrón proxy de registro.
-
-![proxyregistro](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/c30a57db-3f47-4c37-bd2f-c2826b657343)
-
-## Apartado C
-Se nos solicita implementar versiones de la calculadora, una americana y otra europea, de manera que los pacientes americanos puedan insertar sus datos en pies y libras y la calculadora funcione igual, para ello realizamos un patrón decorator.
-
-![decorator](https://github.com/joselugaspar/isa2024-healthcalc/assets/131762623/f625e265-f299-4659-9225-5891acf54335)
